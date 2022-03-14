@@ -1,0 +1,29 @@
+<p>books works!</p>
+<table class="table table-striped">
+    <thead>
+    <tr>
+    <th scope="col">#</th>
+    <th scope="col">Titre</th>
+    <th scope="col">Auteur</th>
+    <th scope="col">Editeur</th>
+    <th scope="col">Genre</th>
+    <th scope="col"></th>
+    <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody *ngIf="books">
+    <tr *ngFor="let book of books; index as i">
+    <th scope="row">{{ i+1 }}</th>
+    <td>{{ book.titre }}</td>
+    <td>{{ book.auteur }}</td>
+    <td>{{ book.editeur }}</td>
+    <td>{{ book.genre }}</td>
+    <td>
+    <i class="bi bi-pencil-square" style="color: green;"></i>
+    </td>
+    <td>
+        <i class="bi bi-trash" (click)="deleteBook(book)" style="color: red;"></i>
+    </td>
+    </tr>
+    </tbody>
+    </table>
